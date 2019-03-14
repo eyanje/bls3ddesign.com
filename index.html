@@ -1,0 +1,193 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="The website for the 3D Design club at Boston Latin School">
+        <meta name="keywords" content="3D,Design,BLS,Boston Latin School,Club">
+        <meta name="author" content="3D Design">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="Hidden Message" content="Congratulations for finding this.">
+        <link href="/data/styles.css" rel="stylesheet">
+        <link href="/data/mobile.css" rel="stylesheet" media="only screen and (max-device-width: 720px)">
+        <link href="/data/img/favicon.ico" rel="icon">
+        <title>3D Design | Boston Latin School</title>
+        <style>
+            #order {
+                text-align: center;
+                padding: 1em;
+            }
+//            #order a {
+//                display: inline-block;
+//              background-color: #800080;
+//                padding: 1em 2em;
+//                color: white;
+//                text-decoration: none;
+//            }
+//            #order a:active {
+//                color: gray;
+//            }
+            #info-shadow {
+                display: none;
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: #88888888;
+                z-index: 4;
+            }
+            #info {
+                position: relative;
+                margin: auto;
+                #margin-top: 1em;
+                width: 30em;
+                max-height: 100%;
+                background-color: #ffffffff;
+                box-shadow: 0 0.1em 0.2em #222222;
+                padding: 2em;
+                font-size: 0.7em;
+                overflow: auto;
+            }
+            #info h3:first-of-type {
+                margin-top: 0;
+            }
+            #info .close-button {
+                position: absolute;
+                top: 0.1em;
+                right: 0.2em;
+            }
+
+            .slideshow img {
+                display: none;
+            }
+            .slide {
+                animation: transin 0.7s, transout 0.7s 4.6s;"
+            }
+            @keyframes transin {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            @keyframes transout {
+                from {
+                    opacity: 1
+                }
+                to {
+                    opacity: 0
+                }
+            }
+            @-webkit-keyframes fade {
+                from {
+                    opacity: 1
+                }
+                to {
+                    opacity: 0;
+                 }
+            }
+        </style>
+        <script>
+            function showInfo() {
+                var infoShadow = document.getElementById("info-shadow");
+                infoShadow.style.display = "block";
+            }
+            function closeInfo() {
+                var infoShadow = document.getElementById("info-shadow");
+                infoShadow.style.display = "none";
+
+            }
+            function calcPrice() {
+                var width = document.getElementById("input-width").value;
+                var height = document.getElementById("input-height").value;
+                var depth = document.getElementById("input-depth").value;
+                var color = document.getElementById("color-picker").value;
+                var volume = width * height * depth;
+                
+                var printMinutes = 2593.25 / 1000000;
+                switch (color) {
+                case "black":
+                case "blue":
+                case "green":
+                    printMinutes = 2054 / 1000000;
+                    break;
+                case "purple":
+                    printMinutes = 4211 / 1000000;
+                }
+                // 4211 minutes for 100% infill (purple)
+                // 2054 minutes for 20% infill (others)
+                var price = volume * printMinutes / 20;
+                
+                if (price < 1) {
+                    price = 1;
+                }
+                
+                var priceOutput = document.getElementById("price");
+                priceOutput.innerHTML = "$" + price.toFixed(2);
+            }
+        </script>
+        <script>
+            var slideIndex = -1;
+            function showSlides() {
+                var slides = document.getElementsByClassName("slide");
+                if (slideIndex >= 0) {
+                    slides[slideIndex].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex >= slides.length) {
+                    slideIndex = 0;
+                }
+                slides[slideIndex].style.display = "block";
+                setTimeout(showSlides, 5000);
+            }
+        </script>
+    <style>
+    </style>
+    </head>
+    <body onload="showSlides()">
+        <script src="/data/header.js"></script>
+        <div id="main">
+            <div class="center">
+                <div id="order">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKs60aZAiAliiJ60cBjDsQ5LG0PoCNImaiJy8av1dW-OY6sA/viewform?usp=sf_link" class="button-link">Order a Print</a>
+                    <a href="#" class="button-link" onclick="showInfo()">See Pricing and Limitations</a>
+                </div>
+                <p>We teach 3D Design to students at Boston Latin School and run a printing service.</p>
+                <div class="slideshow">
+                    <img class="slide" style="display: none;" alt="Pokeball" src="/data/img/pokeball.png">
+                    <img class="slide" style="display: block;" alt="Cheeseburger" src="/data/img/cheeseburger.png">
+                    <img class="slide" style="display: none;" alt="Yasuo's sword" src="/data/img/yasuo.png">
+                    <img class="slide" style="display: none;" alt="Glass house" src="/data/img/glasshouse-green.png">
+                    <img class="slide" style="display: none;" alt="Die" src="/data/img/die.png">
+                </div>
+            </div>
+        </div>
+        
+        <div id="info-shadow">
+            <div id="info">
+                <a href="#" onclick="closeInfo()" class="close-button">close</a>
+                <h3>Calculator</h3>
+                <form onsubmit="calcPrice()">
+                    <p>
+                        Width: <input type="number" id="input-width" min="0" max="200" step="0.01"> mm<br>
+                        Height: <input type="number" id="input-height" min="0" max-"200" step="0.01"> mm<br>
+                        Depth: <input type="number" id="input-depth" min="0" max="200" step="0.01"> mm<br>
+                        Color: <select id="color-picker">
+                            <option value="black">Black</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="purple">Purple</option>
+                        </select><br>
+                        <button type="submit">Calculate Price</button>
+                    </p>
+                </form>
+                <p>Price: <span id="price"></span></p>
+                <p>Note: This is only an estimate. The price may change depending on the model.</p>
+                <h3>Rules</h3>
+                <p>Each 20 minutes of print time will cost $1.00. The print time will be affected by a model's complexity and size.</p>
+                <p>All orders will cost at least $1.00.</p>
+                <p>No orders may be 100 grams or more, or exceed 200 millimeters in any dimension.</p>
+                <p>Particularly detailed models cannot be printed.</p>
+                <p>You will be contacted before we print the model to inform you on the size and price. You may request to change the size before 48 hours.</p>
+            </div>
+        </div>
+        <script src="/data/footer.js"></script>
+    </body>
+</html>

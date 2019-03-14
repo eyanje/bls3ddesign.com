@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"> 
+  <url>
+    <loc>https://www.bls3ddesign.com/index.html</loc> 
+    <lastmod>2017-12-11</lastmod>
+    <image:image>
+        <image:loc>https://www.bls3ddesign.com/data/img/logo.png</image:loc>
+        <image:caption>The logo for the 3D Design Club</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.bls3ddesign.com/data/img/pokeball.png</image:loc>
+      <image:caption>A 3D modeled Pokeball</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.bls3ddesign.com/donate/index.html</loc>
+    <lastmod>2017-12-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.bls3ddesign.com/calendar/index.html</loc>
+    <lastmod>2017-12-11</lastmod>
+  </url>
+</urlset>

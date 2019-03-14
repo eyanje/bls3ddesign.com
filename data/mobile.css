@@ -1,0 +1,15 @@
+header {
+    font-size: 0.5em;
+}
+
+header #eadertitle {
+    font-size: 0.7em;
+}
+
+#main {
+    font-size: 0.4em;
+}
+
+#center {
+    width: 20%;
+}

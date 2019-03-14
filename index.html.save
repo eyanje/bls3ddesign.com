@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="The website for the 3D Design club at Boston Latin School">
+        <meta name="keywords" content="3D,Design,BLS,Boston Latin School,Club">
+        <meta name="author" content="3D Design">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="Hidden Message" content="Congratulations for finding this.">
+        <link href="/data/styles.css" rel="stylesheet">
+        <link href="/data/mobile.css" rel="stylesheet" media="only screen and (max-device-width: 720px)">
+        <link href="/data/img/favicon.ico" rel="icon">
+        <title>3D Design | Boston Latin School</title>
+        <style>
+            #order {
+                text-align: center;
+                padding: 1em;
+            }
+            #order a {
+                display: inline-block;
+                background-color: #800080;
+                padding: 1em 2em;
+                color: white;
+                text-decoration: none;
+            }
+            #order a:active {
+                color: gray;
+            }
+            #pricing {
+                display: none;
+            }
+            .slideshow img {
+                display: none;
+            }
+            .slide {
+                animation: transin 0.7s, transout 0.7s 4.6s;"
+            }
+            @keyframes transin {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            @keyframes transout {
+                from {
+                    opacity: 1
+                }
+                to {
+                    opacity: 0
+                }
+            }
+            @-webkit-keyframes fade {
+                from {
+                    opacity: 1
+                }
+                to {
+                    opacity: 0;
+                 }
+            }
+        </style>
+        <script>
+            function showPricing() {
+                var pricingDiv = document.getElementById("pricing");
+                pricingDiv.style.display= "block";
+            }
+        </script>
+        <script>
+            var slideIndex = -1;
+            function showSlides() {
+                var slides = document.getElementsByClassName("slide");
+                if (slideIndex >= 0) {
+                    slides[slideIndex].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex >= slides.length) {
+                    slideIndex = 0;
+                }
+                slides[slideIndex].style.display = "block";
+                setTimeout(showSlides, 5000);
+            }
+        </script>
+    <style>
+    </style>
+    </head>
+    <body onload="showSlides()">
+        <header>
+            <div class="center">
+                <img id="headerlogo" alt="logo" src="/data/img/logo.png">
+                <span id="headertitle">BLS 3D Design</span>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/calendar">Calendar</a>
+                    <a href="/donate">Donate</a>
+                </nav>
+            <div>
+        </div></div></header>
+        <div id="main">
+            <div class="center">
+                <div id="order">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeKs60aZAiAliiJ60cBjDsQ5LG0PoCNImaiJy8av1dW-OY6sA/viewform?usp=sf_link">Order a Print</a>
+                    <a href="/pricing">See Pricing</a>
+                </div>
+                <div id="pricing">
+                    <h1>Pricing</h1>
+                    <table>
+                        <tr><th>Size</th><th>Price</th></tr>
+                        <tr><td>Base</td><td>$1.00</td></tr>
+                    </table>
+                </div>
+                <p>We teach 3D Design to students at Boston Latin School and run a printing service.</p>
+                <div class="slideshow">
+                    <img class="slide" style="display: none;" alt="Pokeball" src="/data/img/pokeball.png">
+                    <img class="slide" style="display: block;" alt="Cheeseburger" src="/data/img/cheeseburger.png">
+                    <img class="slide" style="display: none;" alt="Yasuo's sword" src="/data/img/yasuo.png">
+                    <img class="slide" style="display: none;" alt="Glass house" src="/data/img/glasshouse-green.png">
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="center">
+                
+            </div>
+        </footer>
+    </body>
+</html>
