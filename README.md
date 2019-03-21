@@ -5,9 +5,7 @@ The website at bls3ddesign.com
 ## Downloading
 
 Clone the repository
-```
-git clone https://github.com/eyanje/bls3ddesign.com.git
-```
+```git clone https://github.com/eyanje/bls3ddesign.com.git```
 
 ## Running
 
@@ -23,16 +21,11 @@ You must use [git](https://git-scm.com/) to edit the repository.
 CS50 automatically comes with git.
 
 Create a branch to make an edit.
-```
-git branch branchname
-```
+```git branch branchname```
 
 After making edits, commit them with a descriptive message
-```
-git commit file1 file2 file3 ... filen -m "message"
-```
+
+```git commit file1 file2 file3 ... filen -m "message"```
 
 Push to the repository
-```
-git push
-```
+```git push```
