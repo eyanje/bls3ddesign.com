@@ -2,7 +2,7 @@ body {
     margin: 0;
     font: 1.2em arial;
     //background-color: #ffba74;
-    background-color: #800080;
+    background-color: #a715a7;
 }
 
 header, footer {
@@ -39,7 +39,7 @@ nav a, a.button-link {
 }
 
 a.button-link {
-    background-color: #800080;
+    background-color: #a715a7;
     padding: 1em;
 }
 
