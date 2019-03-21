@@ -16,16 +16,6 @@
                 text-align: center;
                 padding: 1em;
             }
-//            #order a {
-//                display: inline-block;
-//              background-color: #800080;
-//                padding: 1em 2em;
-//                color: white;
-//                text-decoration: none;
-//            }
-//            #order a:active {
-//                color: gray;
-//            }
             #info-shadow {
                 display: none;
                 position: fixed;
@@ -39,7 +29,6 @@
             #info {
                 position: relative;
                 margin: auto;
-                #margin-top: 1em;
                 width: 30em;
                 max-height: 100%;
                 background-color: #ffffffff;
@@ -59,9 +48,11 @@
 
             .slideshow img {
                 display: none;
+                width: 100%;
+                height: 100%;
             }
             .slide {
-                animation: transin 0.7s, transout 0.7s 4.6s;"
+                animation: transin 0.7s, transout 0.7s 4.6s;
             }
             @keyframes transin {
                 from { opacity: 0; }
@@ -100,7 +91,7 @@
                 var depth = document.getElementById("input-depth").value;
                 var color = document.getElementById("color-picker").value;
                 var volume = width * height * depth;
-                
+
                 var printMinutes = 2593.25 / 1000000;
                 switch (color) {
                 case "black":
@@ -114,11 +105,11 @@
                 // 4211 minutes for 100% infill (purple)
                 // 2054 minutes for 20% infill (others)
                 var price = volume * printMinutes / 20;
-                
+
                 if (price < 1) {
                     price = 1;
                 }
-                
+
                 var priceOutput = document.getElementById("price");
                 priceOutput.innerHTML = "$" + price.toFixed(2);
             }
@@ -159,7 +150,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="info-shadow">
             <div id="info">
                 <a href="#" onclick="closeInfo()" class="close-button">close</a>
