@@ -100,7 +100,7 @@
                 var depth = document.getElementById("input-depth").value;
                 var color = document.getElementById("color-picker").value;
                 var volume = width * height * depth;
-                
+
                 var printMinutes = 2593.25 / 1000000;
                 switch (color) {
                 case "black":
@@ -114,11 +114,11 @@
                 // 4211 minutes for 100% infill (purple)
                 // 2054 minutes for 20% infill (others)
                 var price = volume * printMinutes / 20;
-                
+
                 if (price < 1) {
                     price = 1;
                 }
-                
+
                 var priceOutput = document.getElementById("price");
                 priceOutput.innerHTML = "$" + price.toFixed(2);
             }
@@ -159,7 +159,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="info-shadow">
             <div id="info">
                 <a href="#" onclick="closeInfo()" class="close-button">close</a>
@@ -180,7 +180,7 @@
                 </form>
                 <p>Price: <span id="price"></span></p>
                 <p>Note: This is only an estimate. The price may change depending on the model.</p>
-                <h3>Rules</h3>
+                <h3>Notes</h3>
                 <p>Each 20 minutes of print time will cost $1.00. The print time will be affected by a model's complexity and size.</p>
                 <p>All orders will cost at least $1.00.</p>
                 <p>No orders may be 100 grams or more, or exceed 200 millimeters in any dimension.</p>
