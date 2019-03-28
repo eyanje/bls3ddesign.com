@@ -17,13 +17,13 @@ header {
     box-shadow: 0 0.4em 0.4em -0.4em gray;
 }
 
-header span#headertitle, header img#headerlogo {
+header #headertitle, header #headerlogo {
     margin-top: 0.2em;
     font-size: 2em;
     vertical-align: middle;
 }
 
-header img#headerlogo {
+header #headerlogo {
     width: 1em;
 }
 
@@ -48,7 +48,6 @@ a.button-link:active {
 }
 
 nav a:hover {
-//    background-color: #f4ac64;
       color: black;
       background-color: #ffffff;
 }
@@ -66,7 +65,7 @@ footer {
     padding-right: 2em;
 }
 
-.center * {
+.center {
     max-width: 100%;
 }
 
@@ -80,7 +79,6 @@ footer {
 #main .center {
     margin-top: 0;
     padding: 0.2em 2em 0.4em 2em;
-//    background-color: #ffd39f;
 }
 
 #main .slideshow {
